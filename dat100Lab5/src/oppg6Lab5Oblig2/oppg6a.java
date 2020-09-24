@@ -5,8 +5,8 @@ public class oppg6a {
 
 	public static void main(String[] args) {
 	int []tab= {1,2,3,4,5,6,7,8,9,10};
-	int []a= {1,3,5,7,9};
-	int []b= {2,6,8,9,10};
+	int []a= {1,3,5,7,9,11,13};
+	int []b= {2,6,8,9,10,12,14};
 	skrivUt (tab);
 	System.out.println(tilStreng (tab));
 	
@@ -30,7 +30,7 @@ public class oppg6a {
 	
 	}
 	
-	
+	//a
 	public static void skrivUt (int[] tabell) {
 		System.out.print("[");
 		for(int i=0;i<tabell.length;i++) {
@@ -39,7 +39,7 @@ public class oppg6a {
 		System.out.println("]");	
 	}
 	
-	
+	//b
 	public static String tilStreng (int[] tabell) {
 		String tabs="[";
 		for(int i=0;i<tabell.length;i++) {
@@ -49,6 +49,7 @@ public class oppg6a {
 		return tabs;
 	}
 	
+	//c1
 	public static int summer1 (int[] tabell) {
 		int sum=0;
 		for(int i=0;i<tabell.length;i++) {
@@ -57,6 +58,7 @@ public class oppg6a {
 		return sum;
 	}
 	
+	//c2
 	public static int summer2 (int[] tabell) {
 		int sum=0;
 		int i=0;
@@ -67,6 +69,7 @@ public class oppg6a {
 		return sum;
 	}
 	
+	//c3
 	public static int summer3 (int[] tabell) {
 		int sum=0;
 		for(int s: tabell) {
@@ -75,6 +78,7 @@ public class oppg6a {
 		return sum;
 	}
 	
+	//d
 	public static boolean finnesTall (int[] tabell, int tall) {
 		boolean innholder = false;
 		int i=0;
@@ -86,6 +90,7 @@ public class oppg6a {
 		return innholder ;
 	}
 	
+	//e
 	public static int posisjonTall (int[] tabell, int tall) {
 		boolean innholder = false;
 		int i=0;
@@ -104,6 +109,7 @@ public class oppg6a {
 		return indeks;
 	}
 	
+	//f
 	public static int[] reverser(int[] tabell) {
 		int[] b = new int[tabell.length];
         System.arraycopy(tabell ,0, b, 0, tabell.length);
@@ -116,6 +122,7 @@ public class oppg6a {
 		return b ;
 	}
 	
+	//g
 	public static boolean erSortert (int[] tabell) {
 	
 		boolean sortert = true;
@@ -129,22 +136,20 @@ public class oppg6a {
 		return sortert ;
 	}
 	
+	//h
 	public static int[] settSammen(int[] tabell1,int[] tabell2) {
 		
 		int tabell3[]=new int [tabell1.length+tabell2.length];
-		int s=0;
-		int j=1;
+		
+		int j=0;
 		for(int i=0; i < tabell3.length;i++) {
+			if (i%2==0) {
+				tabell3[i]=tabell1[i-j];
+			}
 			
-				if (i%2==0) {
-					tabell3[i]=tabell1[i-s];
-					s++;
-				}
-			
-				if (i%2==1) {
-					tabell3[i]=tabell2[i-j];
-					j++;
-				
+			if (i%2==1) {
+				j++;
+				tabell3[i]=tabell2[i-j];
 			}
 		}
 		return tabell3;
