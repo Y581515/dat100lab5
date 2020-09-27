@@ -7,25 +7,44 @@ public class oppg6a {
 	int []tab= {1,2,3,4,5,6,7,8,9,10};
 	int []a= {1,3,5,7,9,11,13};
 	int []b= {2,6,8,9,10,12,14};
+	
+	System.out.println("skrivUt Metoden: ");
+	skrivUt (tab);System.out.println("");
+	
+	System.out.println("til streng metoden: ");
+	System.out.println(tilStreng (tab)+"\n");
+	
+	System.out.println("summer metode1:");
+	System.out.println(summer1 (tab)+"\n");
+	
+	System.out.println("summer metode2:");
+	System.out.println(summer2 (tab)+"\n");
+	
+	System.out.println("summer metode3:");
+	System.out.println(summer3 (tab)+"\n");
+	
+	int z=5;
+	System.out.println("tallet "+z+" finnes i tabellen!? ");
+	System.out.println(finnesTall (tab, z)+"\n");
+	
+	int w=3;
+	System.out.print("tallet "+z+" finnes i indeks nr:");
+	System.out.println(posisjonTall (tab, w)+"\n");
+	
+	System.out.println("motsatt rekkefølge til: ");
+	skrivUt (tab);System.out.print("er: ");
+	skrivUt (reverser(tab));System.out.println("");
+	
+	System.out.println("er tabllen her sortert: ");
 	skrivUt (tab);
-	System.out.println(tilStreng (tab));
+	System.out.println(erSortert (tab)+"\n");
 	
-	System.out.println(summer1 (tab));
-	
-	System.out.println(summer2 (tab));
-	
-	System.out.println(summer3 (tab));
-	
-	System.out.println(finnesTall (tab, 5));
-	
-	System.out.println(posisjonTall (tab, 4));
-	
-	skrivUt (reverser(tab));
-	
-	System.out.println(erSortert (tab));
-	
+	System.out.println("sett sammen tabllen her: ");
 	skrivUt (a);
+	System.out.println("her: ");
 	skrivUt (b);
+	System.out.println("");
+	System.out.println("vVv sett sammen metoden Activer...! vVv");
 	skrivUt (settSammen(a,b));
 	
 	}
@@ -41,10 +60,10 @@ public class oppg6a {
 	
 	//b
 	public static String tilStreng (int[] tabell) {
-		String tabs="[";
+		String tabs="";
 		for(int i=0;i<tabell.length;i++) {
 			tabs+=tabell[i]+" " ;		
-		}tabs+="]";
+		}
 
 		return tabs;
 	}
