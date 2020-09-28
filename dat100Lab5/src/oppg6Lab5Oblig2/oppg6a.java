@@ -146,7 +146,7 @@ public class oppg6a {
 	
 		boolean sortert = true;
 		int i=0;
-		while (!sortert && i<tabell.length-1) {
+		while (sortert==true && i<tabell.length-1) {
 			if(tabell[i]>tabell[i+1]) {
 				sortert=false;
 			}
